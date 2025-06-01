@@ -117,12 +117,12 @@ The Agentic Retrieval System builds upon the retrieval-augmented generation conc
    
    **For RARE System:**
    ```bash
-   streamlit run rare_app.py
+   streamlit run main.py
    ```
    
    **For Agentic Retrieval System:**
    ```bash
-   streamlit run agentic_retrieval_app.py
+   streamlit run app2.py
    ```
 
 5. **Access the Applications**
