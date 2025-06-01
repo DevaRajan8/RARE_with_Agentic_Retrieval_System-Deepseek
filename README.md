@@ -1,145 +1,186 @@
-Enhanced RAG and Agentic Retrieval Systems
-This repository contains two powerful Streamlit applications for retrieval-augmented generation: the Enhanced RAG with Chain-of-Thought Reasoning (RARE) system and the Agentic Retrieval System. Together, they form a comprehensive framework referred to as "RARE with Agentic Retrieval," offering robust document processing, retrieval, and response generation capabilities. Both systems leverage the Groq API for generating responses and support various document formats, with the Agentic Retrieval System adding advanced retrieval strategies to complement the RARE foundation.
+# RARE with Agentic Retrieval Systems
 
-Enhanced RAG with Chain-of-Thought Reasoning (RARE)
-Overview
-The RARE system is a retrieval-augmented generation (RAG) application designed to provide intelligent, reasoned answers based on a knowledge base of uploaded documents. It utilizes a vector database (ChromaDB) for efficient storage and retrieval of document embeddings, enabling semantic similarity searches to find relevant documents for a given query. Responses are generated using the Groq API with a chain-of-thought reasoning approach, ensuring detailed and structured answers.
-Key Features
+A comprehensive framework combining two powerful Streamlit applications for retrieval-augmented generation: the **Enhanced RAG with Chain-of-Thought Reasoning (RARE)** system and the **Agentic Retrieval System**. Together, they offer robust document processing, intelligent retrieval, and advanced response generation capabilities powered by the Groq API.
 
-Multi-format Document Support: Processes TXT, PDF, DOCX, CSV, JSON, and Excel files.
-Vector Database: Uses ChromaDB for persistent storage and fast retrieval of document embeddings.
-Semantic Search: Retrieves documents based on cosine similarity of embeddings.
-Chain-of-Thought Reasoning: Generates structured responses with a step-by-step reasoning process.
-Persistent Knowledge Base: Retains documents across sessions.
-User Interface: Streamlit-based interface for document management and querying.
+## 🌟 Overview
 
-How It Works
+This repository contains two complementary systems that work together to provide state-of-the-art document retrieval and question-answering capabilities:
 
-Document Upload: Users upload files or manually add text.
-Text Extraction: Extracts content from supported file formats.
-Embedding Generation: Creates embeddings using the all-MiniLM-L6-v2 SentenceTransformer model.
-Storage: Stores embeddings and metadata in ChromaDB.
-Querying: Retrieves top-k relevant documents based on query embedding similarity.
-Response Generation: Constructs a chain-of-thought prompt with retrieved documents and generates a response via the Groq API.
+- **RARE System**: Foundation RAG with chain-of-thought reasoning
+- **Agentic Retrieval System**: Advanced multi-strategy retrieval with intelligent routing
 
-Usage
+Both systems leverage vector databases for efficient storage, semantic similarity searches, and the Groq API for generating high-quality responses.
 
-Upload Documents: Add files via the uploader (supports multiple formats).
-Add Manually: Input text and sources directly.
-Clear Knowledge Base: Remove all stored documents.
-Ask Questions: Query the system to receive reasoned responses.
+## 🧠 RARE-Enhanced RAG with Chain-of-Thought Reasoning
 
+### Overview
+The RARE system is a retrieval-augmented generation application designed to provide intelligent, reasoned answers based on a knowledge base of uploaded documents. It utilizes ChromaDB for efficient storage and retrieval of document embeddings, enabling semantic similarity searches with a systematic chain-of-thought reasoning approach.
 
-Agentic Retrieval System
-Overview
-The Agentic Retrieval System builds upon the retrieval-augmented generation concept by introducing advanced, agentic retrieval strategies. It supports multiple knowledge bases and dynamically selects the best retrieval mode for a query, including options like document chunks, metadata-based file retrieval, content-based file retrieval, and even mock web searches. This system enhances the RARE framework by offering more flexible and intelligent retrieval capabilities, also powered by the Groq API for response generation.
-Key Features
+### Key Features
+- **Multi-format Document Support**: Processes TXT, PDF, DOCX, CSV, JSON, and Excel files
+- **Vector Database**: Uses ChromaDB for persistent storage and fast retrieval of document embeddings
+- **Semantic Search**: Retrieves documents based on cosine similarity of embeddings
+- **Chain-of-Thought Reasoning**: Generates structured responses with a 6-step reasoning process
+- **Persistent Knowledge Base**: Retains documents across sessions
+- **User Interface**: Streamlit-based interface for document management and querying
 
-Multiple Knowledge Bases: Organize documents into distinct knowledge bases with descriptions.
-Intelligent Routing: Routes queries to the most relevant knowledge base(s) using the Groq API.
-Dynamic Retrieval Modes: Supports:
-chunks: Retrieves specific document excerpts.
-files_via_metadata: Retrieves files based on metadata matches.
-files_via_content: Retrieves files based on full content similarity.
-web_search: Simulates external information retrieval (mock implementation).
+### How RARE Works
 
+1. **Document Upload**: Users upload files or manually add text
+2. **Text Extraction**: Extracts content from supported file formats
+3. **Embedding Generation**: Creates embeddings using the `all-MiniLM-L6-v2` SentenceTransformer model
+4. **Storage**: Stores embeddings and metadata in ChromaDB
+5. **Querying**: Retrieves top-k relevant documents based on query embedding similarity
+6. **Response Generation**: Constructs a chain-of-thought prompt with retrieved documents and generates a response via the Groq API
 
-Iterative Refinement: Adjusts retrieval strategies if initial results are insufficient.
-Response Generation: Generates answers from retrieved context using the Groq API.
-Supported Formats: Handles PDF, DOCX, and TXT files.
+### Chain-of-Thought Process
+1. **Understanding**: Analyze and restate the user's question
+2. **Context Analysis**: Examine retrieved documents for relevance
+3. **Reasoning Process**: Break down complex questions step-by-step
+4. **Evidence Synthesis**: Combine information from multiple sources
+5. **Conclusion Formation**: Provide well-reasoned answers
+6. **Verification**: Double-check answer consistency and completeness
 
-How It Works
+### Usage - RARE System
+- **Upload Documents**: Add files via the uploader (supports multiple formats)
+- **Add Manually**: Input text and sources directly
+- **Clear Knowledge Base**: Remove all stored documents
+- **Ask Questions**: Query the system to receive reasoned responses
 
-Knowledge Base Management: Create or select knowledge bases and upload documents.
-Document Processing: Extracts text, creates chunks, and generates embeddings.
-Query Routing: Identifies relevant knowledge bases for the query.
-Mode Selection: Determines the optimal retrieval mode (e.g., chunks, files_via_content).
-Retrieval: Executes retrieval based on the selected mode.
-Result Evaluation: Assesses result sufficiency, refining with alternative modes if needed.
-Response Generation: Combines retrieved context into a coherent answer via the Groq API.
+---
 
-Usage
+## 🤖 Agentic Retrieval System
 
-Create Knowledge Base: Define a new knowledge base with a name and description.
-Upload Documents: Add files to a selected knowledge base.
-Query the System: Enter a query to retrieve information and generate a response.
-View Knowledge Bases: Inspect and manage existing knowledge bases.
+### Overview
+The Agentic Retrieval System builds upon the retrieval-augmented generation concept by introducing advanced, agentic retrieval strategies. It supports multiple knowledge bases and dynamically selects the best retrieval mode for a query, offering more flexible and intelligent retrieval capabilities than traditional RAG systems.
 
+### Key Features
+- **Multiple Knowledge Bases**: Organize documents into distinct knowledge bases with descriptions
+- **Intelligent Routing**: Routes queries to the most relevant knowledge base(s) using the Groq API
+- **Dynamic Retrieval Modes**: Supports multiple retrieval strategies:
+  - `chunks`: Retrieves specific document excerpts
+  - `files_via_metadata`: Retrieves files based on metadata matches
+  - `files_via_content`: Retrieves files based on full content similarity
+  - `web_search`: Simulates external information retrieval (mock implementation)
+- **Iterative Refinement**: Adjusts retrieval strategies if initial results are insufficient
+- **Response Generation**: Generates answers from retrieved context using the Groq API
+- **Supported Formats**: Handles PDF, DOCX, and TXT files
 
-Installation
-To set up and run either system:
+### How Agentic Retrieval Works
 
-Clone the Repository:
-git clone https://github.com/your-repo/rare-agentic-retrieval.git
-cd rare-agentic-retrieval
+1. **Knowledge Base Management**: Create or select knowledge bases and upload documents
+2. **Document Processing**: Extracts text, creates chunks, and generates embeddings
+3. **Query Routing**: Identifies relevant knowledge bases for the query
+4. **Mode Selection**: Determines the optimal retrieval mode (e.g., chunks, files_via_content)
+5. **Retrieval**: Executes retrieval based on the selected mode
+6. **Result Evaluation**: Assesses result sufficiency, refining with alternative modes if needed
+7. **Response Generation**: Combines retrieved context into a coherent answer via the Groq API
 
+### Usage - Agentic Retrieval System
+- **Create Knowledge Base**: Define a new knowledge base with a name and description
+- **Upload Documents**: Add files to a selected knowledge base
+- **Query the System**: Enter a query to retrieve information and generate a response
+- **View Knowledge Bases**: Inspect and manage existing knowledge bases
 
-Install Dependencies:
-pip install -r requirements.txt
+---
 
-Ensure you have Python 3.8+ installed.
+## 🚀 Installation
 
-Set Environment Variables:
+### Prerequisites
+- Python 3.8 or higher
+- Groq API key
 
-Set your Groq API key:export GROQ_API_KEY=your_api_key_here
+### Setup Instructions
 
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/DevaRajan8/RARE-Deepseek_with_Agentic_Retrieval_System
+   cd RARE-Deepseek_with_Agentic_Retrieval_System
+   ```
 
+2. **Install Dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
+3. **Set Environment Variables**
+   ```bash
+   export GROQ_API_KEY=your_api_key_here
+   ```
+   
+   Or create a `.env` file:
+   ```
+   GROQ_API_KEY=your_api_key_here
+   ```
 
-Run the Application:
+4. **Run the Applications**
+   
+   **For RARE System:**
+   ```bash
+   streamlit run rare_app.py
+   ```
+   
+   **For Agentic Retrieval System:**
+   ```bash
+   streamlit run agentic_retrieval_app.py
+   ```
 
-For RARE:streamlit run rare_app.py
+5. **Access the Applications**
+   - Open your browser and navigate to `http://localhost:8501`
 
+## 📋 Requirements
 
-For Agentic Retrieval:streamlit run agentic_retrieval_app.py
+Create a `requirements.txt` file with the following dependencies:
 
+```
+streamlit>=1.28.0
+requests>=2.31.0
+sentence-transformers>=2.2.2
+chromadb>=0.4.0
+numpy>=1.24.0
+pandas>=2.0.0
+PyPDF2>=3.0.1
+python-docx>=0.8.11
+groq>=0.4.0
+pathlib
+python-dotenv>=1.0.0
+```
 
+## ⚙️ Configuration
 
+### API Configuration
+- **Groq API Key**: Required for both systems. Set via the `GROQ_API_KEY` environment variable
+- **Model**: Uses Groq's language models for response generation
+- **Embedding Model**: Both systems use `all-MiniLM-L6-v2` from SentenceTransformers (configurable in code)
 
+### Database Configuration
+- **Vector Database**: RARE uses ChromaDB with persistent storage at `./chroma_db`
+- **Storage**: Local persistent storage for embeddings and metadata
 
+## 🛠️ Advanced Features
 
-Requirements
-Create a requirements.txt file with the following dependencies:
-streamlit
-requests
-sentence-transformers
-chromadb
-numpy
-pandas
-PyPDF2
-python-docx
-groq
+### Multi-Knowledge Base Management
+The Agentic Retrieval System allows you to:
+- Create multiple specialized knowledge bases
+- Automatically route queries to relevant knowledge bases
+- Manage documents across different domains or topics
 
-Install them using pip install -r requirements.txt.
+### Intelligent Retrieval Strategies
+- **Chunk-based Retrieval**: For precise information extraction
+- **Metadata-based Retrieval**: For document-level filtering
+- **Content-based Retrieval**: For semantic document matching
+- **Hybrid Approaches**: Combining multiple strategies for optimal results
 
-Configuration
+### Chain-of-Thought Integration
+Both systems provide transparent reasoning processes:
+- Step-by-step problem decomposition
+- Evidence evaluation and synthesis
+- Logical conclusion formation
+- Answer verification and validation
 
-Groq API Key: Required for both systems. Set via the GROQ_API_KEY environment variable.
-Embedding Model: Both use all-MiniLM-L6-v2 from SentenceTransformers (configurable in code).
-Vector Database: RARE uses ChromaDB with persistent storage at ./chroma_db.
+## 📄 License
 
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-Examples
-RARE System
-
-Query: "What is the difference between AI and Machine Learning?"
-Response: A detailed answer with reasoning steps, citing relevant documents (e.g., AI overview, ML pipeline).
-
-Agentic Retrieval System
-
-Query: "Summarize the main points from the financial report."
-Response: A concise summary from the most relevant document, with source details and retrieval mode noted.
-
-
-Limitations
-
-Document Size: Large files may be truncated or chunked, potentially losing context.
-Web Search: Agentic Retrieval’s web search is a mock implementation; real API integration is needed for production.
-Performance: Processing many documents can be slow without optimization.
-
-
-Contributing
-Contributions are welcome! Please open an issue or submit a pull request with enhancements or fixes.
-
-License
-This project is licensed under the MIT License.
+## Contact 
+[Devarajan S](mailto:devarajan8.official@gmail.com) 
