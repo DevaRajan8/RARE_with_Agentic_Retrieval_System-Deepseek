@@ -94,8 +94,8 @@ The Agentic Retrieval System builds upon the retrieval-augmented generation conc
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/DevaRajan8/RARE-Deepseek_with_Agentic_Retrieval_System
-   cd RARE-Deepseek_with_Agentic_Retrieval_System
+   git clone https://github.com/DevaRajan8/RARE_with_Agentic_Retrieval_System-Deepseek
+   cd RARE_with_Agentic_Retrieval_System-Deepseek
    ```
 
 2. **Install Dependencies**
